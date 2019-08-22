@@ -22,17 +22,17 @@ const App = () => (
       <Curso
         title="React desde cero" 
         image="https://drupal.ed.team/sites/default/files/styles/16_9_medium/public/imagenes-cdn-edteam/2019-04/React%20desde%20cero%20%281%29.png"
-        price="20usd"
+        price={20}
         />
         <Curso
         title="React - Rutas, APIs & Hooks" 
         image="https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20Rutas%20peticiones%20hooks.png"
-        price="20usd"
+        price={20}
         />
         <Curso
         title="React - Manejo del estado de la aplicación" 
         image="https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20Rutas%20manejo%20de%20estados%20%281%29.png"
-        price="20usd"
+        price={20}
         />
     </div>
   </Fragment>

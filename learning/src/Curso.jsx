@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 // const curso = {
 //   "title": "React desde cero",
@@ -6,13 +7,13 @@ import React from "react";
 //   "price": "50usd"
 // }
 
-const persona = {
-  "nombre": "Alberto",
-  "apellido": "Quiroga",
-  "edad": "29"
-}
+// const persona = {
+//   "nombre": "Alberto",
+//   "apellido": "Quiroga",
+//   "edad": "29"
+// }
 
-const Curso = ({title, image, price}) => (
+const Curso = ({title, image, price,profesor}) => (
     <>
     <article className="card" id={title}>
     <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
@@ -29,15 +30,29 @@ const Curso = ({title, image, price}) => (
               <img src={ image } alt={ title } />
             </div>
           </div>
-          <span className="small">{`${persona.nombre} ${persona.apellido}`}</span>
+          <span className="small">{ profesor }</span>
         </div>
       </div>
       <div className="s-main-center">
-        <a className="button--ghost-alert button--tiny" href="https://www.google.com">{ price }</a>
+        <a className="button--ghost-alert button--tiny" href="https://www.google.com">{ `$ ${price} USD` }</a>
       </div>
     </div>
   </article>
   </>
 )
+
+Curso.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.number,
+  profesor: PropTypes.string
+}
+
+Curso.defaultProps = {
+  title: "No se encontro titulo",
+  image: "https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20desarrollo%20frotend.png",
+  price: 0,
+  profesor: "Sin Profesor"
+}
 
 export default Curso;
